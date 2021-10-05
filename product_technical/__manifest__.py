@@ -13,6 +13,6 @@ Ficha Técnica para Producto
     'author': 'Codize, Exemax',
     'website': 'http://www.codize.ar',
     'depends': ['base', 'product'],
-    'data': ['product_template.xml'],
+    'data': ['product_template.xml', 'report.xml'],
     'installable': True,
 }

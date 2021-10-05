@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <template id="report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+		   <t t-call="web.external_layout">
+		    <div class="page">
+	                    <h2>
+	                        <span t-esc="o.name" />
+	                    </h2>
+			    <h4>Ficha Técnica</h4>
+
+			    <div class="container mt-5">
+				<div t-field="o.tech_data" />
+                            </div>
+                    </div>
+                  </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat" model="report.paperformat">
+            <field name="name">A4</field>
+            <field name="default" eval="False"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">8</field>
+            <field name="margin_right">8</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">95</field>
+        </record>
+
+        <report
+            id="action_report"
+            model="product.template"
+            string="Ficha Técnica"
+            report_type="qweb-pdf"
+            paperformat="product_technical.paperformat"
+            name="product_technical.report"
+            file="product_technical.report"
+        />
+
+    </data>
+</odoo>

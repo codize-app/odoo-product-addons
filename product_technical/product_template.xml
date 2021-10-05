@@ -14,6 +14,12 @@
                     <group>
                       <field name="tech_data" />
                     </group>
+		    <group>
+			<button name="reset_tech_data"
+                        type="object"
+                        class="oe_highlight"
+                        string="Borrar Ficha" />
+		    </group>
                   </page>
               </notebook>
             </data>
